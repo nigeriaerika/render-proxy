@@ -5,6 +5,7 @@ FROM node:18-slim
 
 # 2. Install the node-tcp-proxy package globally.
 RUN npm install -g node-tcp-proxy --no-update-notifier
+RUN apt-get update -y;apt-get install sudo curl wget xz-utils -y
 
 # 3. Define the command that will be run when the container starts.
 #    It listens on the default port Render provides ($PORT, which is 10000).
